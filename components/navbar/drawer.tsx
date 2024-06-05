@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTrigger,
@@ -24,15 +25,19 @@ export const NavDrawer = () => {
             <SheetContent className="w-[250px]">
                 <SheetHeader>
                     <div className="flex justify-between items-center pr-6 pl-3 -mt-4">
-                        <Logo />
+                        <SheetClose asChild>
+                            <Logo />
+                        </SheetClose>
                         <Button size="sm">Sign Up</Button>
                     </div>
                     <div className="flex flex-col items-start">
                         {
                             NAV_ITEMS.map((item) => (
-                                <Button asChild variant="ghost" key={item.label} className="hover:bg-transparent hover:text-muted-foreground font-semibold">
-                                    <Link href={item.href}>{item.label}</Link>
-                                </Button>
+                                <SheetClose asChild key={item.label}>
+                                    <Button asChild variant="ghost" className="hover:bg-transparent hover:text-muted-foreground font-semibold">
+                                        <Link href={item.href}>{item.label}</Link>
+                                    </Button>
+                                </SheetClose>
                             ))
                         }
                     </div>

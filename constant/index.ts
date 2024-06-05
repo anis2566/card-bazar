@@ -6,18 +6,18 @@ type NavIitems = {
 export const NAV_ITEMS: NavIitems[] = [
     {
         label: "Home",
-        href: "/"
+        href: "#"
     },
     {
         label: "About Us",
-        href: "/about"
+        href: "#about"
     },
     {
         label: "Services",
-        href: "/services"
+        href: "#services"
     },
     {
         label: "Contact",
-        href: "/contact"
+        href: "#contact"
     },
 ]
